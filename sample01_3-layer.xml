@@ -82,12 +82,7 @@
         <cc:Infrastructure ref="cloud1" />
       </cc:Infrastructures>
       <cc:Roles>
-        <cc:Role ref="web_role">
-          <cc:Import type="chef_attribute">test1.rb</cc:Import>
-          <cc:UserInputKeys>
-            <cc:UserInputKey>apache.modproxy.server</cc:UserInputKey>
-          </cc:UserInputKeys>
-        </cc:Role>
+        <cc:Role ref="web_role" />
       </cc:Roles>
       <cc:FloatingIP ref="eip1" />
       <cc:NodeType>
@@ -104,9 +99,7 @@
         <cc:Infrastructure ref="cloud1" />
       </cc:Infrastructures>
       <cc:Roles>
-        <cc:Role ref="ap_role">
-          <cc:Import type="chef_attribute">test2.rb</cc:Import>
-        </cc:Role>
+        <cc:Role ref="ap_role" />
       </cc:Roles>
       <cc:NodeType>
         <cc:Single />
@@ -122,12 +115,7 @@
         <cc:Infrastructure ref="cloud1" />
       </cc:Infrastructures>
       <cc:Roles>
-        <cc:Role ref="db_role">
-          <cc:Import type="chef_attribute">test3.rb</cc:Import>
-          <cc:UserInputKeys>
-            <cc:UserInputKey>mysql.turning.memxxx</cc:UserInputKey>
-          </cc:UserInputKeys>
-        </cc:Role>
+        <cc:Role ref="db_role" />
       </cc:Roles>
       <cc:NodeType>
         <cc:Single />
