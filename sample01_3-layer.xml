@@ -146,27 +146,6 @@
         <cc:Single />
       </cc:NodeType>
     </cc:MachineGroup>
-
-    <cc:MachineGroup id="dns-server-g" ref="small-server">
-      <cc:Name>DNS Server</cc:Name>
-      <cc:Infrastructures>
-        <cc:Infrastructure ref="cloud1" />
-      </cc:Infrastructures>
-      <cc:Roles>
-        <cc:Role ref="dns_ntp_role">
-          <cc:Import type="chef_attribute">test5.rb</cc:Import>
-          <cc:UserInputKeys>
-            <cc:UserInputKey>dns.domain</cc:UserInputKey>
-            <cc:UserInputKey>ntp.server1</cc:UserInputKey>
-            <cc:UserInputKey>ntp.server2</cc:UserInputKey>
-            <cc:UserInputKey>ntp.server3</cc:UserInputKey>
-          </cc:UserInputKeys>
-        </cc:Role>
-      </cc:Roles>
-      <cc:NodeType>
-        <cc:Single />
-      </cc:NodeType>
-    </cc:MachineGroup>
   </cc:MachineGroups>
 
   <!-- Middleware定義 -->
@@ -197,11 +176,6 @@
     <cc:Middleware type="chef" id="dns_cookbook">
       <cc:Name>DNS</cc:Name>
       <cc:Repository>http://example.com/dns.git</cc:Repository>
-    </cc:Middleware>
-
-    <cc:Middleware type="chef" id="ntp_cookbook">
-      <cc:Name>NTP</cc:Name>
-      <cc:Repository>http://example.com/ntp.git</cc:Repository>
     </cc:Middleware>
   </cc:Middlewares>
 
@@ -248,21 +222,6 @@
       </cc:Middlewares>
       <cc:Import type="chef_runlist">chef_runlist_zabbix.rb</cc:Import>
       <cc:Import type="chef_attribute">chef_attr_zabbix.rb</cc:Import>
-    </cc:Role>
-
-    <cc:Role type="chef" id="dns_ntp_role">
-      <cc:Name>DNS Server Role</cc:Name>
-      <cc:Middlewares>
-        <cc:Middleware ref="dns_cookbook" />
-        <cc:Middleware ref="ntp_cookbook" />
-      </cc:Middlewares>
-      <cc:Import type="chef_runlist">chef_runlist_dnsntp.rb</cc:Import>
-      <cc:Import type="chef_attribute">chef_attr_dnsntp.rb</cc:Import>
-      <cc:UserInputKeys>
-        <cc:UserInputKey>ntp.server1</cc:UserInputKey>
-        <cc:UserInputKey>ntp.server2</cc:UserInputKey>
-        <cc:UserInputKey>ntp.server3</cc:UserInputKey>
-      </cc:UserInputKeys>
     </cc:Role>
   </cc:Roles>
 
