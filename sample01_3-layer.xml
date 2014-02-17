@@ -15,7 +15,23 @@
 
   <!-- マシン定義 -->
   <cc:Machines>
-    <cc:Machine id="small-server">
+    <cc:Machine id="small-server-web">
+      <cc:Name>Small Server</cc:Name>
+      <cc:SpecType>small</cc:SpecType>
+      <cc:OSType>CentOS</cc:OSType>
+      <cc:OSVersion>6.4</cc:OSVersion>
+      <cc:NetworkInterfaces>
+        <cc:NetworkInterface ref="private_net_g1" />
+      </cc:NetworkInterfaces>
+      <cc:MachineFilters>
+        <cc:MachineFilter ref="sec_in_80" />
+        <cc:MachineFilter ref="sec_in_prinet_allow" />
+        <cc:MachineFilter ref="sec_in_all_deny" />
+        <cc:MachineFilter ref="sec_out_all_allow" />
+      </cc:MachineFilters>
+    </cc:Machine>
+
+    <cc:Machine id="small-server-zabbix">
       <cc:Name>Small Server</cc:Name>
       <cc:SpecType>small</cc:SpecType>
       <cc:OSType>CentOS</cc:OSType>
@@ -69,7 +85,7 @@
 
   <!-- マシングループ定義 -->
   <cc:MachineGroups>
-    <cc:MachineGroup id="web-server-g" ref="small-server">
+    <cc:MachineGroup id="web-server-g" ref="small-server-web">
       <cc:Name>WEB Server Group</cc:Name>
       <cc:Infrastructures>
         <cc:Infrastructure ref="cloud1" />
@@ -133,7 +149,7 @@
       </cc:Monitorings>
     </cc:MachineGroup>
 
-    <cc:MachineGroup id="zabbix-server-g" ref="small-server">
+    <cc:MachineGroup id="zabbix-server-g" ref="small-server-zabbix">
       <cc:Name>Zabbix Server</cc:Name>
       <cc:Infrastructures>
         <cc:Infrastructure ref="cloud1" />
