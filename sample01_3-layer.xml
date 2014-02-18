@@ -321,19 +321,19 @@
   <cc:Monitorings>
     <cc:Monitoring id="LinuxOS_Minimum">
       <cc:Name>LinuxOS Minimum Monitoring</cc:Name>
-      <cc:Import filetype="zabbix">http://192.168.166.161/cloudconductor/xml-store/blob/master/zbx_os_minimum.xml</cc:Import>
+      <cc:Import filetype="zabbix">https://raw.github.com/cloudconductor-dev/zabbix-templates/master/zbx_os_minimum.xml</cc:Import>
     </cc:Monitoring>
     <cc:Monitoring id="Web_Small">
       <cc:Name>Web Small Monitoring</cc:Name>
-      <cc:Import filetype="zabbix">http://192.168.166.161/cloudconductor/xml-store/blob/master/zbx_apache_small.xml</cc:Import>
+      <cc:Import filetype="zabbix">https://raw.github.com/cloudconductor-dev/zabbix-templates/master/zbx_apache_small.xml</cc:Import>
     </cc:Monitoring>
     <cc:Monitoring id="AP_Small">
       <cc:Name>AP Small Monitoring</cc:Name>
-      <cc:Import filetype="zabbix">http://192.168.166.161/cloudconductor/xml-store/blob/master/zbx_tomcat_small.xml</cc:Import>
+      <cc:Import filetype="zabbix">https://raw.github.com/cloudconductor-dev/zabbix-templates/master/zbx_tomcat_small.xml</cc:Import>
     </cc:Monitoring>
     <cc:Monitoring id="DB_Small">
       <cc:Name>DB Small Monitoring</cc:Name>
-      <cc:Import filetype="zabbix">http://192.168.166.161/cloudconductor/xml-store/blob/master/zbx_postgresql_small.xml</cc:Import>
+      <cc:Import filetype="zabbix">https://raw.github.com/cloudconductor-dev/zabbix-templates/master/zbx_postgresql_small.xml</cc:Import>
     </cc:Monitoring>
   </cc:Monitorings>
 </cc:System>
