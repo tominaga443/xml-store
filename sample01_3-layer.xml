@@ -185,8 +185,8 @@
         <cc:Middleware ref="deploy_cookbook" />
         <cc:Middleware ref="nsupdate_cookbook" />
       </cc:Middlewares>
-      <cc:Import type="chef_runlist">chef_runlist_apache.rb</cc:Import>
-      <cc:Import type="chef_attribute">chef_attr_apache.rb</cc:Import>
+      <cc:Import type="chef_runlist">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_runlist_apache.json</cc:Import>
+      <cc:Import type="chef_attribute">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_attr_apache.json</cc:Import>
       <cc:UserInputKeys>
         <cc:UserInputKey>apache.modproxy.server</cc:UserInputKey>
       </cc:UserInputKeys>
@@ -199,8 +199,8 @@
         <cc:Middleware ref="deploy_cookbook" />
         <cc:Middleware ref="nsupdate_cookbook" />
       </cc:Middlewares>
-      <cc:Import type="chef_runlist">chef_runlist_tomcat.rb</cc:Import>
-      <cc:Import type="chef_attribute">chef_attr_tomcat.rb</cc:Import>
+      <cc:Import type="chef_runlist">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_runlist_tomcat.json</cc:Import>
+      <cc:Import type="chef_attribute">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_attr_tomcat.json</cc:Import>
     </cc:Role>
     <cc:Role type="chef" id="db_role">
       <cc:Name>DB Server Role</cc:Name>
@@ -210,8 +210,8 @@
         <cc:Middleware ref="deploy_cookbook" />
         <cc:Middleware ref="nsupdate_cookbook" />
       </cc:Middlewares>
-      <cc:Import type="chef_runlist">chef_runlist_postgresql.rb</cc:Import>
-      <cc:Import type="chef_attribute">chef_attr_postgresql.rb</cc:Import>
+      <cc:Import type="chef_runlist">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_runlist_postgresql.json</cc:Import>
+      <cc:Import type="chef_attribute">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_attr_postgresql.json</cc:Import>
       <cc:UserInputKeys>
         <cc:UserInputKey>mysql.turning.memxxx</cc:UserInputKey>
       </cc:UserInputKeys>
@@ -225,8 +225,8 @@
         <cc:Middleware ref="deploy_cookbook" />
         <cc:Middleware ref="nsupdate_cookbook" />
       </cc:Middlewares>
-      <cc:Import type="chef_runlist">chef_runlist_zabbix.rb</cc:Import>
-      <cc:Import type="chef_attribute">chef_attr_zabbix.rb</cc:Import>
+      <cc:Import type="chef_runlist">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_runlist_zabbix.json</cc:Import>
+      <cc:Import type="chef_attribute">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_attr_zabbix.json</cc:Import>
     </cc:Role>
   </cc:Roles>
   <cc:Volumes>
