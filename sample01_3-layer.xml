@@ -15,7 +15,7 @@
       <cc:Name>Small Server</cc:Name>
       <cc:SpecType>small</cc:SpecType>
       <cc:OSType>CentOS</cc:OSType>
-      <cc:OSVersion>6.4</cc:OSVersion>
+      <cc:OSVersion>6.5</cc:OSVersion>
       <cc:NetworkInterfaces>
         <cc:NetworkInterface ref="private_net_g1" />
       </cc:NetworkInterfaces>
@@ -30,7 +30,7 @@
       <cc:Name>Medium Server</cc:Name>
       <cc:SpecType>medium</cc:SpecType>
       <cc:OSType>CentOS</cc:OSType>
-      <cc:OSVersion>6.4</cc:OSVersion>
+      <cc:OSVersion>6.5</cc:OSVersion>
       <cc:NetworkInterfaces>
         <cc:NetworkInterface ref="private_net_g1" />
       </cc:NetworkInterfaces>
@@ -44,7 +44,7 @@
       <cc:Name>Large Server</cc:Name>
       <cc:SpecType>large</cc:SpecType>
       <cc:OSType>CentOS</cc:OSType>
-      <cc:OSVersion>6.4</cc:OSVersion>
+      <cc:OSVersion>6.5</cc:OSVersion>
       <cc:NetworkInterfaces>
         <cc:NetworkInterface ref="private_net_g1" />
       </cc:NetworkInterfaces>
@@ -63,7 +63,7 @@
       <cc:Name>Small Server</cc:Name>
       <cc:SpecType>small</cc:SpecType>
       <cc:OSType>CentOS</cc:OSType>
-      <cc:OSVersion>6.4</cc:OSVersion>
+      <cc:OSVersion>6.5</cc:OSVersion>
       <cc:NetworkInterfaces>
         <cc:NetworkInterface ref="private_net_g1" />
       </cc:NetworkInterfaces>
