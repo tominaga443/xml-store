@@ -145,6 +145,11 @@
       <cc:Repository>https://github.com/cloudconductor-dev/cookbooks.git</cc:Repository>
       <cc:CookbookName>cc-zabbix</cc:CookbookName>
     </cc:Middleware>
+    <cc:Middleware type="chef" id="nsupdate_cookbook">
+      <cc:Name>NSUpdate</cc:Name>
+      <cc:Repository>https://github.com/cloudconductor-dev/cookbooks.git</cc:Repository>
+      <cc:CookbookName>cc-nsupdate</cc:CookbookName>
+    </cc:Middleware>
     <cc:Middleware type="chef" id="bind_cookbook">
       <cc:Name>Bind 9</cc:Name>
       <cc:Repository>https://github.com/cloudconductor-dev/cookbooks.git</cc:Repository>
@@ -155,19 +160,14 @@
       <cc:Repository>https://github.com/cloudconductor-dev/cookbooks.git</cc:Repository>
       <cc:CookbookName>cc-deploy</cc:CookbookName>
     </cc:Middleware>
-    <cc:Middleware type="chef" id="nsupdate_cookbook">
-      <cc:Name>NSUpdate</cc:Name>
-      <cc:Repository>https://github.com/cloudconductor-dev/cookbooks.git</cc:Repository>
-      <cc:CookbookName>cc-nsupdate</cc:CookbookName>
-    </cc:Middleware>
   </cc:Middlewares>
   <cc:Roles>
     <cc:Role type="chef" id="web_role">
       <cc:Name>Web Server Role</cc:Name>
       <cc:Middlewares>
+        <cc:Middleware ref="nsupdate_cookbook" />
         <cc:Middleware ref="zabbix_cookbook" />
         <cc:Middleware ref="deploy_cookbook" />
-        <cc:Middleware ref="nsupdate_cookbook" />
       </cc:Middlewares>
       <cc:Import type="chef_runlist">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_runlist_apache.json</cc:Import>
       <cc:Import type="chef_attribute">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_attr_apache.json</cc:Import>
@@ -178,9 +178,9 @@
     <cc:Role type="chef" id="ap_role">
       <cc:Name>AP Server Role</cc:Name>
       <cc:Middlewares>
+        <cc:Middleware ref="nsupdate_cookbook" />
         <cc:Middleware ref="zabbix_cookbook" />
         <cc:Middleware ref="deploy_cookbook" />
-        <cc:Middleware ref="nsupdate_cookbook" />
       </cc:Middlewares>
       <cc:Import type="chef_runlist">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_runlist_tomcat.json</cc:Import>
       <cc:Import type="chef_attribute">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_attr_tomcat.json</cc:Import>
@@ -188,9 +188,9 @@
     <cc:Role type="chef" id="db_role">
       <cc:Name>DB Server Role</cc:Name>
       <cc:Middlewares>
+        <cc:Middleware ref="nsupdate_cookbook" />
         <cc:Middleware ref="zabbix_cookbook" />
         <cc:Middleware ref="deploy_cookbook" />
-        <cc:Middleware ref="nsupdate_cookbook" />
       </cc:Middlewares>
       <cc:Import type="chef_runlist">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_runlist_postgresql.json</cc:Import>
       <cc:Import type="chef_attribute">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_attr_postgresql.json</cc:Import>
@@ -198,10 +198,10 @@
     <cc:Role type="chef" id="zabbix_role">
       <cc:Name>Monitoring Server Role</cc:Name>
       <cc:Middlewares>
-        <cc:Middleware ref="zabbix_cookbook" />
         <cc:Middleware ref="bind_cookbook" />
-        <cc:Middleware ref="deploy_cookbook" />
         <cc:Middleware ref="nsupdate_cookbook" />
+        <cc:Middleware ref="zabbix_cookbook" />
+        <cc:Middleware ref="deploy_cookbook" />
       </cc:Middlewares>
       <cc:Import type="chef_runlist">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_runlist_zabbix.json</cc:Import>
       <cc:Import type="chef_attribute">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_attr_zabbix.json</cc:Import>
