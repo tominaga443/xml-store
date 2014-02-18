@@ -140,21 +140,6 @@
     </cc:MachineGroup>
   </cc:MachineGroups>
   <cc:Middlewares>
-    <cc:Middleware type="chef" id="apache_cookbook">
-      <cc:Name>Apache 2.2</cc:Name>
-      <cc:Repository>https://github.com/cloudconductor-dev/cookbooks.git</cc:Repository>
-      <cc:CookbookName>cc-apache</cc:CookbookName>
-    </cc:Middleware>
-    <cc:Middleware type="chef" id="tomcat_cookbook">
-      <cc:Name>Tomcat 6.0</cc:Name>
-      <cc:Repository>https://github.com/cloudconductor-dev/cookbooks.git</cc:Repository>
-      <cc:CookbookName>cc-tomcat</cc:CookbookName>
-    </cc:Middleware>
-    <cc:Middleware type="chef" id="postgresql_cookbook">
-      <cc:Name>PostgreSQL 9.0</cc:Name>
-      <cc:Repository>https://github.com/cloudconductor-dev/cookbooks.git</cc:Repository>
-      <cc:CookbookName>cc-postgres</cc:CookbookName>
-    </cc:Middleware>
     <cc:Middleware type="chef" id="zabbix_cookbook">
       <cc:Name>Zabbix</cc:Name>
       <cc:Repository>https://github.com/cloudconductor-dev/cookbooks.git</cc:Repository>
@@ -180,7 +165,6 @@
     <cc:Role type="chef" id="web_role">
       <cc:Name>Web Server Role</cc:Name>
       <cc:Middlewares>
-        <cc:Middleware ref="apache_cookbook" />
         <cc:Middleware ref="zabbix_cookbook" />
         <cc:Middleware ref="deploy_cookbook" />
         <cc:Middleware ref="nsupdate_cookbook" />
@@ -194,7 +178,6 @@
     <cc:Role type="chef" id="ap_role">
       <cc:Name>AP Server Role</cc:Name>
       <cc:Middlewares>
-        <cc:Middleware ref="tomcat_cookbook" />
         <cc:Middleware ref="zabbix_cookbook" />
         <cc:Middleware ref="deploy_cookbook" />
         <cc:Middleware ref="nsupdate_cookbook" />
@@ -205,7 +188,6 @@
     <cc:Role type="chef" id="db_role">
       <cc:Name>DB Server Role</cc:Name>
       <cc:Middlewares>
-        <cc:Middleware ref="postgresql_cookbook" />
         <cc:Middleware ref="zabbix_cookbook" />
         <cc:Middleware ref="deploy_cookbook" />
         <cc:Middleware ref="nsupdate_cookbook" />
@@ -219,7 +201,6 @@
     <cc:Role type="chef" id="zabbix_role">
       <cc:Name>Monitoring Server Role</cc:Name>
       <cc:Middlewares>
-        <cc:Middleware ref="apache_cookbook" />
         <cc:Middleware ref="zabbix_cookbook" />
         <cc:Middleware ref="bind_cookbook" />
         <cc:Middleware ref="deploy_cookbook" />
