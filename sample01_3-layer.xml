@@ -172,7 +172,7 @@
       <cc:Import type="chef_runlist">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_runlist_apache.json</cc:Import>
       <cc:Import type="chef_attribute">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_attr_apache.json</cc:Import>
       <cc:UserInputKeys>
-        <cc:UserInputKey>apache.modproxy.server</cc:UserInputKey>
+        <cc:UserInputKey>apache.contact</cc:UserInputKey>
       </cc:UserInputKeys>
     </cc:Role>
     <cc:Role type="chef" id="ap_role">
@@ -194,9 +194,6 @@
       </cc:Middlewares>
       <cc:Import type="chef_runlist">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_runlist_postgresql.json</cc:Import>
       <cc:Import type="chef_attribute">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_attr_postgresql.json</cc:Import>
-      <cc:UserInputKeys>
-        <cc:UserInputKey>mysql.turning.memxxx</cc:UserInputKey>
-      </cc:UserInputKeys>
     </cc:Role>
     <cc:Role type="chef" id="zabbix_role">
       <cc:Name>Monitoring Server Role</cc:Name>
