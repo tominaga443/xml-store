@@ -21,9 +21,10 @@
       </cc:NetworkInterfaces>
       <cc:MachineFilters>
         <cc:MachineFilter ref="sec_in_80" />
-        <cc:MachineFilter ref="sec_in_prinet_allow" />
+        <cc:MachineFilter ref="sec_in_443" />
         <cc:MachineFilter ref="sec_in_all_deny" />
         <cc:MachineFilter ref="sec_out_all_allow" />
+        <cc:MachineFilter ref="sec_in_10050" />
       </cc:MachineFilters>
     </cc:Machine>
     <cc:Machine id="medium-server">
@@ -35,9 +36,10 @@
         <cc:NetworkInterface ref="private_net_g1" />
       </cc:NetworkInterfaces>
       <cc:MachineFilters>
-        <cc:MachineFilter ref="sec_in_prinet_allow" />
         <cc:MachineFilter ref="sec_in_all_deny" />
         <cc:MachineFilter ref="sec_out_all_allow" />
+        <cc:MachineFilter ref="sec_in_10050" />
+        <cc:MachineFilter ref="sec_in_8080" />
       </cc:MachineFilters>
     </cc:Machine>
     <cc:Machine id="large-server">
@@ -54,9 +56,10 @@
         </cc:Volume>
       </cc:Volumes>
       <cc:MachineFilters>
-        <cc:MachineFilter ref="sec_in_prinet_allow" />
         <cc:MachineFilter ref="sec_in_all_deny" />
         <cc:MachineFilter ref="sec_out_all_allow" />
+        <cc:MachineFilter ref="sec_in_10050" />
+        <cc:MachineFilter ref="sec_in_5432" />
       </cc:MachineFilters>
     </cc:Machine>
     <cc:Machine id="small-server-zabbix">
@@ -69,7 +72,10 @@
       </cc:NetworkInterfaces>
       <cc:MachineFilters>
         <cc:MachineFilter ref="sec_in_80" />
-        <cc:MachineFilter ref="sec_in_prinet_allow" />
+        <cc:MachineFilter ref="sec_in_443" />
+        <cc:MachineFilter ref="sec_in_tcp_53" />
+        <cc:MachineFilter ref="sec_in_udp_53" />
+        <cc:MachineFilter ref="sec_in_10051" />
         <cc:MachineFilter ref="sec_in_all_deny" />
         <cc:MachineFilter ref="sec_out_all_allow" />
       </cc:MachineFilters>
@@ -209,7 +215,7 @@
   </cc:Roles>
   <cc:Volumes>
     <cc:Volume id="test_vol1">
-      <cc:Size>50</cc:Size>
+      <cc:Size>1</cc:Size>
       <cc:IOPS>low</cc:IOPS>
     </cc:Volume>
   </cc:Volumes>
@@ -221,11 +227,11 @@
       <cc:Source>all</cc:Source>
       <cc:RuleAction>allow</cc:RuleAction>
     </cc:MachineFilter>
-    <cc:MachineFilter id="sec_in_prinet_allow">
+    <cc:MachineFilter id="sec_in_443">
       <cc:Protocol>tcp</cc:Protocol>
-      <cc:Port>all</cc:Port>
+      <cc:Port>443</cc:Port>
       <cc:Direction>ingress</cc:Direction>
-      <cc:Source ref="private_net_g1" />
+      <cc:Source>all</cc:Source>
       <cc:RuleAction>allow</cc:RuleAction>
     </cc:MachineFilter>
     <cc:MachineFilter id="sec_in_all_deny">
@@ -240,6 +246,48 @@
       <cc:Port>all</cc:Port>
       <cc:Direction>egress</cc:Direction>
       <cc:Destination>all</cc:Destination>
+      <cc:RuleAction>allow</cc:RuleAction>
+    </cc:MachineFilter>
+    <cc:MachineFilter id="sec_in_10050">
+      <cc:Protocol>tcp</cc:Protocol>
+      <cc:Port>10050</cc:Port>
+      <cc:Direction>ingress</cc:Direction>
+      <cc:Source ref="private_net_g1" />
+      <cc:RuleAction>allow</cc:RuleAction>
+    </cc:MachineFilter>
+    <cc:MachineFilter id="sec_in_8080">
+      <cc:Protocol>tcp</cc:Protocol>
+      <cc:Port>8080</cc:Port>
+      <cc:Direction>ingress</cc:Direction>
+      <cc:Source ref="private_net_g1" />
+      <cc:RuleAction>allow</cc:RuleAction>
+    </cc:MachineFilter>
+    <cc:MachineFilter id="sec_in_5432">
+      <cc:Protocol>tcp</cc:Protocol>
+      <cc:Port>5432</cc:Port>
+      <cc:Direction>ingress</cc:Direction>
+      <cc:Source ref="private_net_g1" />
+      <cc:RuleAction>allow</cc:RuleAction>
+    </cc:MachineFilter>
+    <cc:MachineFilter id="sec_in_tcp_53">
+      <cc:Protocol>tcp</cc:Protocol>
+      <cc:Port>53</cc:Port>
+      <cc:Direction>ingress</cc:Direction>
+      <cc:Source ref="private_net_g1" />
+      <cc:RuleAction>allow</cc:RuleAction>
+    </cc:MachineFilter>
+    <cc:MachineFilter id="sec_in_udp_53">
+      <cc:Protocol>udp</cc:Protocol>
+      <cc:Port>53</cc:Port>
+      <cc:Direction>ingress</cc:Direction>
+      <cc:Source ref="private_net_g1" />
+      <cc:RuleAction>allow</cc:RuleAction>
+    </cc:MachineFilter>
+    <cc:MachineFilter id="sec_in_10051">
+      <cc:Protocol>tcp</cc:Protocol>
+      <cc:Port>10051</cc:Port>
+      <cc:Direction>ingress</cc:Direction>
+      <cc:Source ref="private_net_g1" />
       <cc:RuleAction>allow</cc:RuleAction>
     </cc:MachineFilter>
   </cc:MachineFilters>
