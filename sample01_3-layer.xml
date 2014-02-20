@@ -29,7 +29,7 @@
     </cc:Machine>
     <cc:Machine id="medium-server">
       <cc:Name>Medium Server</cc:Name>
-      <cc:SpecType>medium</cc:SpecType>
+      <cc:SpecType>small</cc:SpecType>
       <cc:OSType>CentOS</cc:OSType>
       <cc:OSVersion>6.5</cc:OSVersion>
       <cc:NetworkInterfaces>
@@ -44,7 +44,7 @@
     </cc:Machine>
     <cc:Machine id="large-server">
       <cc:Name>Large Server</cc:Name>
-      <cc:SpecType>large</cc:SpecType>
+      <cc:SpecType>small</cc:SpecType>
       <cc:OSType>CentOS</cc:OSType>
       <cc:OSVersion>6.5</cc:OSVersion>
       <cc:NetworkInterfaces>
