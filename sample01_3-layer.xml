@@ -137,7 +137,7 @@
         <cc:Infrastructure ref="cloud1" />
       </cc:Infrastructures>
       <cc:Roles>
-        <cc:Role ref="zabbix_role" />
+        <cc:Role ref="zabbix_dns_role" />
       </cc:Roles>
       <cc:FloatingIP ref="eip2" />
       <cc:NodeType>
@@ -201,7 +201,7 @@
       <cc:Import type="chef_runlist">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_runlist_postgresql.json</cc:Import>
       <cc:Import type="chef_attribute">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_attr_postgresql.json</cc:Import>
     </cc:Role>
-    <cc:Role type="chef" id="zabbix_role">
+    <cc:Role type="chef" id="zabbix_dns_role">
       <cc:Name>Monitoring Server Role</cc:Name>
       <cc:Middlewares>
         <cc:Middleware ref="bind_cookbook" />
