@@ -95,8 +95,8 @@
         <cc:Single />
       </cc:NodeType>
       <cc:Monitorings>
-        <cc:Monitoring ref="LinuxOS_Minimum" />
-        <cc:Monitoring ref="Web_Small" />
+        <cc:Monitoring ref="LinuxOS" />
+        <cc:Monitoring ref="Web" />
       </cc:Monitorings>
     </cc:MachineGroup>
     <cc:MachineGroup id="ap-server-g" ref="medium-server">
@@ -111,8 +111,8 @@
         <cc:Single />
       </cc:NodeType>
       <cc:Monitorings>
-        <cc:Monitoring ref="LinuxOS_Minimum" />
-        <cc:Monitoring ref="AP_Small" />
+        <cc:Monitoring ref="LinuxOS" />
+        <cc:Monitoring ref="AP" />
       </cc:Monitorings>
     </cc:MachineGroup>
     <cc:MachineGroup id="db-server-g" ref="large-server">
@@ -127,8 +127,8 @@
         <cc:Single />
       </cc:NodeType>
       <cc:Monitorings>
-        <cc:Monitoring ref="LinuxOS_Minimum" />
-        <cc:Monitoring ref="DB_Small" />
+        <cc:Monitoring ref="LinuxOS" />
+        <cc:Monitoring ref="DB" />
       </cc:Monitorings>
     </cc:MachineGroup>
     <cc:MachineGroup id="zabbix-server-g" ref="small-server-zabbix">
@@ -360,21 +360,21 @@
     </cc:FloatingIP>
   </cc:FloatingIPs>
   <cc:Monitorings>
-    <cc:Monitoring id="LinuxOS_Minimum">
-      <cc:Name>LinuxOS Minimum Monitoring</cc:Name>
-      <cc:Import filetype="zabbix">https://raw.github.com/cloudconductor-dev/zabbix-templates/master/zbx_os_minimum.xml</cc:Import>
+    <cc:Monitoring id="LinuxOS">
+      <cc:Name>LinuxOS Monitoring</cc:Name>
+      <cc:Import filetype="zabbix">https://raw2.github.com/cloudconductor-dev/zabbix-templates/release-0.2.0/zbx_os.xml</cc:Import>
     </cc:Monitoring>
-    <cc:Monitoring id="Web_Small">
-      <cc:Name>Web Small Monitoring</cc:Name>
-      <cc:Import filetype="zabbix">https://raw.github.com/cloudconductor-dev/zabbix-templates/master/zbx_apache_small.xml</cc:Import>
+    <cc:Monitoring id="Web">
+      <cc:Name>Web Monitoring</cc:Name>
+      <cc:Import filetype="zabbix">https://raw2.github.com/cloudconductor-dev/zabbix-templates/release-0.2.0/zbx_apache.xml</cc:Import>
     </cc:Monitoring>
-    <cc:Monitoring id="AP_Small">
-      <cc:Name>AP Small Monitoring</cc:Name>
-      <cc:Import filetype="zabbix">https://raw.github.com/cloudconductor-dev/zabbix-templates/master/zbx_tomcat_small.xml</cc:Import>
+    <cc:Monitoring id="AP">
+      <cc:Name>AP Monitoring</cc:Name>
+      <cc:Import filetype="zabbix">https://raw2.github.com/cloudconductor-dev/zabbix-templates/release-0.2.0/zbx_tomcat.xml</cc:Import>
     </cc:Monitoring>
-    <cc:Monitoring id="DB_Small">
-      <cc:Name>DB Small Monitoring</cc:Name>
-      <cc:Import filetype="zabbix">https://raw.github.com/cloudconductor-dev/zabbix-templates/master/zbx_postgresql_small.xml</cc:Import>
+    <cc:Monitoring id="DB">
+      <cc:Name>DB Monitoring</cc:Name>
+      <cc:Import filetype="zabbix">https://raw2.github.com/cloudconductor-dev/zabbix-templates/release-0.2.0/zbx_postgresql.xml</cc:Import>
     </cc:Monitoring>
   </cc:Monitorings>
 </cc:System>
