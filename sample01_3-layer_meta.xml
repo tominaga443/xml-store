@@ -43,7 +43,7 @@
   <ccm:Links>
     <ccm:Link>
       <ccm:Source ref="private_net1">
-        <ccm:Selector>g:nth-child(1) g:nth-child(3) circle:nth-child(1)    </ccm:Selector>
+        <ccm:Selector>g:nth-child(1) g:nth-child(3) circle:nth-child(1)</ccm:Selector>
       </ccm:Source>
       <ccm:Target ref="small-server-web">
         <ccm:Selector>.magnet</ccm:Selector>
@@ -51,7 +51,7 @@
     </ccm:Link>
     <ccm:Link>
       <ccm:Source ref="private_net1">
-        <ccm:Selector>g:nth-child(1) g:nth-child(3) circle:nth-child(2)    </ccm:Selector>
+        <ccm:Selector>g:nth-child(1) g:nth-child(3) circle:nth-child(2)</ccm:Selector>
       </ccm:Source>
       <ccm:Target ref="medium-server">
         <ccm:Selector>.magnet</ccm:Selector>
@@ -59,7 +59,7 @@
     </ccm:Link>
     <ccm:Link>
       <ccm:Source ref="private_net1">
-        <ccm:Selector>g:nth-child(1) g:nth-child(3) circle:nth-child(3)    </ccm:Selector>
+        <ccm:Selector>g:nth-child(1) g:nth-child(3) circle:nth-child(3)</ccm:Selector>
       </ccm:Source>
       <ccm:Target ref="large-server">
         <ccm:Selector>.magnet</ccm:Selector>
@@ -67,7 +67,7 @@
     </ccm:Link>
     <ccm:Link>
       <ccm:Source ref="private_net1">
-        <ccm:Selector>g:nth-child(1) g:nth-child(3) circle:nth-child(4)    </ccm:Selector>
+        <ccm:Selector>g:nth-child(1) g:nth-child(3) circle:nth-child(4)</ccm:Selector>
       </ccm:Source>
       <ccm:Target ref="small-server-zabbix">
         <ccm:Selector>.magnet</ccm:Selector>

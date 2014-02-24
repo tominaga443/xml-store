@@ -166,6 +166,18 @@
       <cc:Repository>https://github.com/cloudconductor-dev/cookbooks.git</cc:Repository>
       <cc:CookbookName>cc-deploy</cc:CookbookName>
     </cc:Middleware>
+    <cc:Middleware type="chef" id="apache_cookbook">
+      <cc:Name>Apache2</cc:Name>
+      <cc:Repository>https://github.com/opscode-cookbooks/apache2.git</cc:Repository>
+    </cc:Middleware>
+    <cc:Middleware type="chef" id="tomcat_cookbook">
+      <cc:Name>Tomcat6</cc:Name>
+      <cc:Repository>https://github.com/opscode-cookbooks/tomcat.git</cc:Repository>
+    </cc:Middleware>
+    <cc:Middleware type="chef" id="postgresql_cookbook">
+      <cc:Name>PostgreSQL</cc:Name>
+      <cc:Repository>https://github.com/hw-cookbooks/postgresql.git</cc:Repository>
+    </cc:Middleware>
   </cc:Middlewares>
   <cc:Roles>
     <cc:Role type="chef" id="web_role">
@@ -174,6 +186,7 @@
         <cc:Middleware ref="nsupdate_cookbook" />
         <cc:Middleware ref="zabbix_cookbook" />
         <cc:Middleware ref="deploy_cookbook" />
+        <cc:Middleware ref="apache_cookbook" />
       </cc:Middlewares>
       <cc:Import type="chef_runlist">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_runlist_apache.json</cc:Import>
       <cc:Import type="chef_attribute">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_attr_apache.json</cc:Import>
@@ -187,6 +200,7 @@
         <cc:Middleware ref="nsupdate_cookbook" />
         <cc:Middleware ref="zabbix_cookbook" />
         <cc:Middleware ref="deploy_cookbook" />
+        <cc:Middleware ref="tomcat_cookbook" />
       </cc:Middlewares>
       <cc:Import type="chef_runlist">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_runlist_tomcat.json</cc:Import>
       <cc:Import type="chef_attribute">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_attr_tomcat.json</cc:Import>
@@ -197,6 +211,7 @@
         <cc:Middleware ref="nsupdate_cookbook" />
         <cc:Middleware ref="zabbix_cookbook" />
         <cc:Middleware ref="deploy_cookbook" />
+        <cc:Middleware ref="postgresql_cookbook" />
       </cc:Middlewares>
       <cc:Import type="chef_runlist">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_runlist_postgresql.json</cc:Import>
       <cc:Import type="chef_attribute">https://raw.github.com/cloudconductor-dev/chef-parameters/master/chef_attr_postgresql.json</cc:Import>
