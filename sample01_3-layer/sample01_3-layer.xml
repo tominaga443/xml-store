@@ -76,6 +76,7 @@
         <cc:MachineFilter ref="sec_in_tcp_53" />
         <cc:MachineFilter ref="sec_in_udp_53" />
         <cc:MachineFilter ref="sec_in_10051" />
+        <cc:MachineFilter ref="sec_in_3128" />
         <cc:MachineFilter ref="sec_in_all_deny" />
         <cc:MachineFilter ref="sec_out_all_allow" />
       </cc:MachineFilters>
@@ -271,6 +272,13 @@
     <cc:MachineFilter id="sec_in_10050">
       <cc:Protocol>tcp</cc:Protocol>
       <cc:Port>10050</cc:Port>
+      <cc:Direction>ingress</cc:Direction>
+      <cc:Source ref="private_net_g1" />
+      <cc:RuleAction>allow</cc:RuleAction>
+    </cc:MachineFilter>
+    <cc:MachineFilter id="sec_in_3128">
+      <cc:Protocol>tcp</cc:Protocol>
+      <cc:Port>3128</cc:Port>
       <cc:Direction>ingress</cc:Direction>
       <cc:Source ref="private_net_g1" />
       <cc:RuleAction>allow</cc:RuleAction>
