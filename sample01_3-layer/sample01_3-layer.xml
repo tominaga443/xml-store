@@ -25,6 +25,7 @@
         <cc:MachineFilter ref="sec_in_all_deny" />
         <cc:MachineFilter ref="sec_out_all_allow" />
         <cc:MachineFilter ref="sec_in_10050" />
+        <cc:MachineFilter ref="sec_in_22_internal" />
       </cc:MachineFilters>
     </cc:Machine>
     <cc:Machine id="medium-server">
@@ -40,6 +41,7 @@
         <cc:MachineFilter ref="sec_out_all_allow" />
         <cc:MachineFilter ref="sec_in_10050" />
         <cc:MachineFilter ref="sec_in_8080" />
+        <cc:MachineFilter ref="sec_in_22_internal" />
       </cc:MachineFilters>
     </cc:Machine>
     <cc:Machine id="large-server">
@@ -60,6 +62,7 @@
         <cc:MachineFilter ref="sec_out_all_allow" />
         <cc:MachineFilter ref="sec_in_10050" />
         <cc:MachineFilter ref="sec_in_5432" />
+        <cc:MachineFilter ref="sec_in_22_internal" />
       </cc:MachineFilters>
     </cc:Machine>
     <cc:Machine id="small-server-zabbix">
@@ -79,6 +82,7 @@
         <cc:MachineFilter ref="sec_in_3128" />
         <cc:MachineFilter ref="sec_in_all_deny" />
         <cc:MachineFilter ref="sec_out_all_allow" />
+        <cc:MachineFilter ref="sec_in_22" />
       </cc:MachineFilters>
     </cc:Machine>
   </cc:Machines>
@@ -276,9 +280,9 @@
       <cc:Source ref="private_net_g1" />
       <cc:RuleAction>allow</cc:RuleAction>
     </cc:MachineFilter>
-    <cc:MachineFilter id="sec_in_3128">
+    <cc:MachineFilter id="sec_in_22_internal">
       <cc:Protocol>tcp</cc:Protocol>
-      <cc:Port>3128</cc:Port>
+      <cc:Port>22</cc:Port>
       <cc:Direction>ingress</cc:Direction>
       <cc:Source ref="private_net_g1" />
       <cc:RuleAction>allow</cc:RuleAction>
@@ -316,6 +320,20 @@
       <cc:Port>10051</cc:Port>
       <cc:Direction>ingress</cc:Direction>
       <cc:Source ref="private_net_g1" />
+      <cc:RuleAction>allow</cc:RuleAction>
+    </cc:MachineFilter>
+    <cc:MachineFilter id="sec_in_3128">
+      <cc:Protocol>tcp</cc:Protocol>
+      <cc:Port>3128</cc:Port>
+      <cc:Direction>ingress</cc:Direction>
+      <cc:Source ref="private_net_g1" />
+      <cc:RuleAction>allow</cc:RuleAction>
+    </cc:MachineFilter>
+    <cc:MachineFilter id="sec_in_22">
+      <cc:Protocol>tcp</cc:Protocol>
+      <cc:Port>22</cc:Port>
+      <cc:Direction>ingress</cc:Direction>
+      <cc:Source>all</cc:Source>
       <cc:RuleAction>allow</cc:RuleAction>
     </cc:MachineFilter>
   </cc:MachineFilters>
