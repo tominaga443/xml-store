@@ -148,6 +148,9 @@
       <cc:NodeType>
         <cc:Single />
       </cc:NodeType>
+      <cc:Monitorings>
+        <cc:Monitoring ref="LinuxOS" />
+      </cc:Monitorings>
     </cc:MachineGroup>
   </cc:MachineGroups>
   <cc:Middlewares>
